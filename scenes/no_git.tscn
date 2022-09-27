@@ -73,7 +73,7 @@ text = "Sandbox"
 [node name="Button2" type="Button" parent="VBoxContainer"]
 margin_right = 351.0
 margin_bottom = 39.0
-text = "Sure, I'll install it!"
+text = "Ok, lo voy a instalar"
 
 [node name="Sprite" type="Sprite" parent="."]
 
@@ -94,11 +94,11 @@ margin_left = 20.0
 margin_top = 21.0
 margin_right = 546.0
 margin_bottom = 252.0
-text = "Hi! It seems that you don't have Git installed yet!
+text = "Hola, parece que aún no tienes instalado Git.
 
-On Linux, please install it from your package manager, usually the package is called \"git\"!
+En Linux, por favor, instálalo desde tu gestor de paquetes, normalmente el paquete se llama \"git\".
 
-On macOS 10.8 and below, you can download Git from git-scm.com."
+En macOS 10.8 e inferior, puedes descargar Git desde git-scm.com."
 autowrap = true
 [connection signal="pressed" from="VBoxContainer/Button" to="." method="levels"]
 [connection signal="pressed" from="VBoxContainer/Button3" to="." method="sandbox"]

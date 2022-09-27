@@ -34,7 +34,7 @@ margin_top = 13.0
 margin_right = -15.0
 margin_bottom = -15.0
 custom_fonts/font = ExtResource( 1 )
-text = "This is a hint! This is a hint! This is a hint! This is a hint! This is a hint! This is a hint! This is a hint! This is a hint! This is a hint!"
+text = "Esta es una pista! ¡Esto es una pista! ¡Esto es una pista! ¡Esta es una pista! ¡Esta es una pista! ¡Esta es una pista! ¡Esto es una pista! ¡Esto es una pista! ¡Esto es una pista!"
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -50,13 +50,13 @@ __meta__ = {
 }
 
 [node name="OK" type="Button" parent="Panel/CenterContainer"]
-margin_left = 202.0
+margin_left = 177.0
 margin_top = 9.0
-margin_right = 282.0
+margin_right = 306.0
 margin_bottom = 48.0
 focus_mode = 0
 enabled_focus_mode = 0
-text = "Got it!"
+text = "Entendido!"
 __meta__ = {
 "_edit_use_anchors_": false
 }

@@ -1,42 +1,42 @@
-title = Making backups
+title = Realización de copias de seguridad
 cards =
 
 [description]
 
-This time, you're making a lot of backup copies - you can look at them by clicking on them!
+Esta vez, estás haciendo un montón de copias de seguridad - ¡puedes verlas haciendo clic en ellas!
 
 [congrats]
 
-Okay, this kind of works.
+Bien, esto funciona.
 
-But you're a bit worried that you'll end up with hundreds of copies of this form, and it will be hard to keep track of all of them.
+Pero te preocupa un poco que acabes teniendo cientos de copias de este formulario, y que sea difícil hacer un seguimiento de todas ellas.
 
-And especially when working with other people, sending copies back and forth doesn't seem ideal.
+Y especialmente cuando se trabaja con otras personas, enviar copias de un lado a otro no parece lo ideal.
 
-You can't wait to try these time machines!
+¡No puedes esperar a probar estas máquinas del tiempo!
 
 [setup]
 
 rm -rf .git
 
-echo "~ Why I want to learn Git ~
+echo "~ por qué quiero aprender Git ~
 
-(I still need to write this.)" >> form.txt
-
-
-echo "~ Why I want to learn Git ~
-
-- So that I can undo mistakes" >> form2.txt
+(Todavía necesito escribir esto.)" >> form.txt
 
 
-echo "~ Why I want to learn Git ~
+echo "~ Por qué quiero aprender Git ~
 
-- So that I can undo mistakes
-- To track my projects over time" >> form2_final.txt
+- Para poder deshacer errores" >> form2.txt
 
-cp form2_final.txt form2_really_final.txt
+
+echo "~ Por qué quiero aprender Git ~
+
+- Para poder deshacer errores
+- Para seguir mis proyectos a lo largo del tiempo" >> form2_final.txt
+
+cp form2_final.txt form2_realmente_final.txt
 
 [win]
 
-# Add another line to form2_really_final.txt!
-test "$(cat form2_really_final.txt | wc -l )" -ge 5
+# Añade otra línea a form2_realmente_final.txt!
+test "$(cat form2_realmente_final.txt | wc -l )" -ge 5

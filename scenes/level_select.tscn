@@ -47,7 +47,7 @@ margin_left = 61.0902
 margin_top = 59.0538
 margin_right = 126.09
 margin_bottom = 98.0538
-text = "Back"
+text = "Atrás"
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -59,12 +59,13 @@ margin_right = 226.588
 margin_bottom = 98.3009
 focus_mode = 0
 enabled_focus_mode = 0
-text = "Reload"
+text = "Recargar"
 __meta__ = {
 "_edit_use_anchors_": false
 }
 
 [node name="Button3" parent="." instance=ExtResource( 4 )]
+text = "Música"
 
 [node name="HelpLabel" type="Label" parent="."]
 visible = false

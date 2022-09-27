@@ -1,25 +1,25 @@
-title = Working together
+title = Trabajar juntos
 cards = pull commit-auto push
 
 [description]
 
-Let's add your name to our list of students!
+¡Vamos a añadir tu nombre a nuestra lista de estudiantes!
 
-I already have a second commit of it in my time machine - let's work together!
+Ya tengo un segundo compromiso en mi máquina del tiempo: ¡trabajemos juntos!
 
 [cli]
 
-To go back to old commands, you can press arrow up and down. That way, you don't have to type in long commands twice.
+Para volver a los antiguos comandos, puedes pulsar las flechas arriba y abajo. De esta manera, no tienes que escribir dos veces los comandos largos.
 
 [congrats]
 
-Welcome to time travel school! :) I'll see you for your first class tomorrow!
+¡Bienvenido a la escuela de viajes en el tiempo! :) ¡Nos vemos mañana en tu primera clase!
 
 [setup]
 
-echo "~ List of current students ~" > students
+echo "~ Lista de estudiantes actuales ~" > students
 git add .
-git commit -m "Initial version"
+git commit -m "Version inicial"
 git push -u teacher main
 
 git update-ref -d refs/remotes/teacher/main
@@ -33,20 +33,20 @@ echo "
 - Alex" >> students
 
 git add .
-git commit -m "Added two students"
+git commit -m "Se han añadido dos estudiantes"
 
 [win]
 
-# Get the second commit from your teacher using `git pull`.
+# Obtenga el segundo commit de su profesor utilizando `git pull`.
 test "$(git log --oneline teacher/main | wc -l)" -ge 2
 
-# Add your name to the list of students
+# Añade tu nombre a la lista de estudiantes
 test "$(cat students |wc -l)" -ge 5
 
-# Commit your result.
+# Haga un commit del resultado.
 test "$(git show main:students |wc -l)" -ge 5
 
 [win teacher]
 
-# And use `git push` to send it to your teacher!
+# Y use `git push` para enviarlo a tu profesor!
 test "$(git show main:students |wc -l)" -ge 5
