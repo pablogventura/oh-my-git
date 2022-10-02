@@ -1,38 +1,38 @@
-title = Welcome to time travel school!
+title = Bienvenido a la escuela de viajes en el tiempo.
 cards = config-name commit-auto checkout
 
 [description]
 
-You're still pretty confused by everything that's going on. The next day, you decide to enroll in time travel school!
+Todavía estás bastante confundido por todo lo que está pasando. Al día siguiente, decides matricularte en la escuela de viajes en el tiempo.
 
-Your time travel teacher welcomes you: "Hello there! Wanna tell us your name?"
+Tu profesor de viajes en el tiempo te da la bienvenida: "¡Hola! ¿Quieres decirnos tu nombre?"
 
 [setup]
 
-git config --global user.name "You"
+git config --global user.name "Tu nombre"
 
-echo "~ Why do you want to learn how to use time machines? ~
+echo "~ ¿Por qué quieres aprender a utilizar las máquinas del tiempo? ~
 
-[ ] To make sure that my cat doesn't eat my homework.
-[ ] So I don't have to keep copies of all my essays.
-[ ] To collaborate with other time travel students.
-[ ] Other, please specify:" > form
+[ ] Para que mi gato no se coma mis deberes.
+[ ] Así no tengo que guardar copias de todos mis ensayos.
+[ ] Colaborar con otros estudiantes de viajes en el tiempo.
+[ ] Otros, especifique:" > form
 
 [actions]
 
-test "$(git config user.name)" != "You" && cat form | grep -v Signature && echo "
+test "$(git config user.name)" != "Tu nombre" && cat form | grep -v Signature && echo "
 Signature: $(git config user.name)" >> form
 
 [win]
 
-# Introduce yourself.
-test "$(git config user.name)" != "You"
+# Preséntese.
+test "$(git config user.name)" != "Tu nombre"
 
-# Fill out the enrollment form, and commit it!
+# Rellene el formulario de inscripción y comprométase.
 git show main:form | grep '\[[xX]\]'
 
 [congrats]
 
-"We're so glad to have you!
+"¡Estamos muy contentos de tenerte!
 
-Git can help you fix problems in the past! It allows you to collaborate with other students of time travel! It's really powerful, and it's really popular! I'll see you for your first lesson tomorrow!"
+¡Git puede ayudarte a solucionar problemas en el pasado! ¡Te permite colaborar con otros estudiantes de viajes en el tiempo! ¡Es realmente poderoso, y es realmente popular! ¡Te veré en tu primera lección mañana!"
