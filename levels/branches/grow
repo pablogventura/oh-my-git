@@ -1,34 +1,34 @@
-title = Branches grow with you!
+title = Las ramas crecen contigo
 cards = checkout commit-auto branch branch-delete reset-hard
 
 [description]
 
-Note that there are two options to "travel to the end of a timeline":
+Tenga en cuenta que hay dos opciones para "viajar al final de una línea de tiempo":
 
-First, you can directly travel to the commit, like we've done it before.
+En primer lugar, puedes viajar directamente al compromiso, como hemos hecho antes.
 
-And second, you can travel to the branch label. In this case, when you make a new commit, the branch will grow with you, and still point at the end of the timeline!
+Y en segundo lugar, puedes viajar a la etiqueta de la rama. En este caso, cuando hagas un nuevo commit, la rama crecerá contigo, ¡y seguirá apuntando al final de la línea de tiempo!
 
 [cli]
 
-To travel to a branch, type `git checkout name_of_the_branch`.
+Para ir a una rama, escriba `git checkout nombre_de_la_rama`.
 
-And to travel to the last commit, type `git checkout --detach name_of_the_branch`.
+Y para ir a la última confirmación, escriba `git checkout --detach nombre_de_la_rama`.
 
 [setup]
 
-echo "You wrap the birthday present, and grab your concert ticket." > you
+echo "Envuelves el regalo de cumpleaños y coges tu entrada para el concierto." > you
 git add .
-git commit -m "Evening preparations"
-echo "You go to the birthday party!" >> you
+git commit -m "Preparativos para la noche"
+echo "¡Vete a la fiesta de cumpleaños!" >> you
 git add .
-git commit -m "Go to the birthday"
+git commit -m "Ir al cumpleaños"
 git branch birthday
 
 git checkout HEAD~1
-echo "You go to the concert!" > you
+echo "¡Vete al concierto!" > you
 git add .
-git commit -m "Go to the concert"
+git commit -m "Ir al concierto"
 git branch concert
 
 git checkout HEAD~1
@@ -37,7 +37,7 @@ git branch -D main
 
 [win]
 
-# Travel directly to the last yellow commit of the birthday timeline, make a change to 'you', and make a commit
+# Viaja directamente al último commit amarillo de la línea de tiempo del cumpleaños, haz un cambio a 'tú', y haz un commit
 for commit in $(git cat-file --batch-check='%(objectname) %(objecttype)' --batch-all-objects | grep 'commit$' | cut -f1 -d' '); do
     if test $(git rev-parse $commit^) = $(git rev-parse birthday); then
         return 0
@@ -45,5 +45,5 @@ for commit in $(git cat-file --batch-check='%(objectname) %(objecttype)' --batch
 done
 return 1
 
-# Travel to the blue 'concert' branch, make a change to 'you', and a commit.
-git show concert^ | grep "Go to the concert"
+# Viaja a la rama azul 'concert', haz un cambio a 'you', y un commit.
+git show concert^ | grep "Ir al concierto"

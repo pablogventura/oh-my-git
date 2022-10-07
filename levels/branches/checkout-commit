@@ -1,43 +1,43 @@
-title = Moving through time
+title = Moviéndose a través del tiempo
 cards = checkout commit-auto
 
 [description]
 
-The yellow boxes are frozen points in time, we call them "commits"! You can travel between them using the "checkout" card! (Try it!)
+Las cajas amarillas son puntos congelados en el tiempo, ¡los llamamos "commits"! Puedes viajar entre ellos utilizando la tarjeta "checkout". (¡Pruébalo!)
 
-Can you find out what happened here? Then, while on the last commit, edit the files to fix the problem, and make a new commit!
+¿Puedes averiguar qué ha pasado aquí? ¡A continuación, mientras que en el último commit, editar los archivos para solucionar el problema, y hacer un nuevo commit!
 
 [cli]
 
-To checkout a specific commit, type `git checkout`, then a space, and then right click on the commit you want!
+Para comprobar un commit específico, escribe `git checkout`, luego un espacio, y luego haz clic con el botón derecho en el commit que quieras.
 
-This will insert the commit's unique identifier!
+Esto insertará el identificador único de la confirmación.
 
 [setup]
 
-echo "This piggy bank belongs to the big sister.
-It contains 10 coins." > piggy_bank
+echo "Esta hucha pertenece a la hermana mayor.
+Contiene 10 monedas." > piggy_bank
 git add .
-git commit -m "The beginning"
+git commit -m "El comienzo"
 
-echo "A young girl with brown, curly hair." > little_sister
+echo "Una chica joven con el pelo castaño y rizado." > little_sister
 git add .
-git commit -m "Little sister comes in"
+git commit -m "La hermana pequeña entra"
 
-echo "Has 10 coins." >> little_sister
-echo "This piggy bank belongs to the big sister.
-It is empty." > piggy_bank
+echo "Tiene 10 monedas." >> little_sister
+echo "Esta hucha pertenece a la hermana mayor.
+Está vacío." > piggy_bank
 git add .
-git commit -m "Little sister does something"
+git commit -m "La hermana pequeña hace algo"
 
 git checkout HEAD^^
 git branch -df main
 
 [win]
 
-# Restore sisterly peace.
-{ git show HEAD:piggy_bank | grep "10 coins"; } && { git show HEAD:little_sister | grep -v "10 coins"; } && { git rev-parse HEAD^^^; }
+# Restablecer la paz entre hermanas.
+{ git show HEAD:piggy_bank | grep "10 monedas"; } && { git show HEAD:little_sister | grep -v "10 monedas"; } && { git rev-parse HEAD^^^; }
 
 [congrats]
 
-Wonderful! Now that you're getting familiar with the time machine, let's look at some more complicated situations...
+¡Maravilloso! Ahora que te estás familiarizando con la máquina del tiempo, veamos algunas situaciones más complicadas...

@@ -1,89 +1,89 @@
-title = Moving branches around
+title = Moviendo las ramas
 cards = checkout commit-auto merge reset-hard
 
 [description]
 
-One of your colleagues messed up here, and put the branches in the wrong timelines!
+Uno de tus colegas se equivocó aquí, y puso las ramas en las líneas de tiempo equivocadas.
 
-You could delete and re-create these branches - but you can also directly move them to different commits, by using
+Puedes eliminar y volver a crear estas ramas - pero también puedes moverlas directamente a diferentes commits, utilizando
 
     git checkout
 
-on the branch names, and then using
+en los nombres de las ramas, y luego usando
 
     git reset --hard
 
-on the commit where you want the branch to be.
+en el commit donde quieres que esté la rama.
 
-The donut branch is in the right place, but the timeline is still incomplete - make you actually *eat* the donut in that branch!
+La rama del donut está en el lugar correcto, pero la línea de tiempo sigue incompleta: ¡haz que realmente *comas* el donut en esa rama!
 
 [setup]
 
-echo "You do not have a baguette.
+echo "No tienes una baguette.
 
-You do not have coffee.
+No tiene café.
 
-You do not have a donut." > you
+No tienes un donut." > you
 
 git add .
-git commit -m "The Beginning"
+git commit -m "El comienzo"
 
 git checkout -b coffee
-echo "You have a baguette.
+echo "Tienes una baguette.
 
-You do not have coffee.
+No tiene café.
 
-You do not have a donut." > you
+No tienes un donut." > you
 git add .
-git commit -m "You buy a baguette"
+git commit -m "Compras una baguette"
 
-echo "You ate a baguette.
+echo "Te comiste una baguette.
 
-You do not have coffee.
+No tiene café.
 
-You do not have a donut." > you
+No tienes un donut." > you
 git add .
-git commit -m "You eat the baguette"
+git commit -m "Te comes la baguette"
 
 git checkout -b baguette main
-echo "You do not have a baguette.
+echo "No tienes una baguette.
 
-You have coffee.
+Tienes café.
 
-You do not have a donut." > you
+No tienes un donut." > you
 git add .
-git commit -m "You buy some coffee"
+git commit -m "Compras un poco de café"
 
-echo "You do not have a baguette.
+echo "No tienes una baguette.
 
-You drank coffee.
+Has bebido café.
 
-You do not have a donut." > you
+No tienes un donut." > you
 git add .
-git commit -m "You drink the coffee"
+git commit -m "Te bebes el café"
 
 git checkout -b donut main
-echo "You do not have a baguette.
+echo "No tienes una baguette.
 
-You do not have coffee.
+No tiene café.
 
-You have a donut." > you
+Tienes un donut." > you
 git add .
-git commit -m "You buy a donut"
+git commit -m "Compras un donut"
 
 git checkout --detach main
 
 [win]
 
-# Did you eat a baguette on the baguette branch?
-git show baguette:you | grep "You ate.*baguette"
+# ¿Te has comido una baguette en la rama de la baguette?
+git show baguette:you | grep "Te comiste.*baguette"
 
-# Did you drink a coffee on the coffee branch?
-git show coffee:you | grep "You drank.*coffee"
+# ¿Te has tomado un café en la rama del café?
+git show coffee:you | grep "Te tomaste.*café"
 
-# Did you eat a donut on the donut branch?
-git show donut:you | grep "You ate.*donut"
+# ¿Te has comido un donut en la rama de los donuts?
+git show donut:you | grep "Te comiste.*donut"
 
 [actions]
 
-test "$(git rev-parse HEAD^)" = "$(git rev-parse donut)" && hint "Remember to checkout the blue branch tag when you want it to grow with the timeline."
+test "$(git rev-parse HEAD^)" = "$(git rev-parse donut)" && hint "Recuerde comprobar la etiqueta azul de la rama cuando quiera que crezca con la línea de tiempo."
