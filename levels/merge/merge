@@ -1,82 +1,82 @@
-title = Merging timelines
+title = Merge de líneas de tiempo
 cards = checkout commit-auto merge
 
 [description]
 
-Here's a trick so that you can sleep a bit longer: just do all your morning activities in parallel universes, and then at the end, merge them together!
+He aquí un truco para que puedas dormir un poco más: haz todas tus actividades matutinas en universos paralelos y, al final, ¡fúndelas!
 
 [setup]
 
-echo "You do not have a baguette.
+echo "No tienes una baguette.
 
-You do not have coffee.
+No tienes café.
 
-You do not have a donut." > you
+No tienes un donut." > you
 
 git add .
-git commit -m "The Beginning"
+git commit -m "El comienzo"
 
-echo "You have a baguette.
+echo "Tienes una baguette.
 
-You do not have coffee.
+No tienes café.
 
-You do not have a donut." > you
+No tienes un donut." > you
 git add .
-git commit -m "You buy a baguette"
+git commit -m "Compras una baguette"
 
-echo "You ate a baguette.
+echo "Te comiste una baguette.
 
-You do not have coffee.
+No tiene café.
 
-You do not have a donut." > you
+No tienes un donut." > you
 git add .
-git commit -m "You eat the baguette"
+git commit -m "Te comes la baguette"
 
 git checkout HEAD~2
-echo "You do not have a baguette.
+echo "No tienes una baguette.
 
-You have coffee.
+Tienes café.
 
-You do not have a donut." > you
+No tienes un donut." > you
 git add .
-git commit -m "You buy some coffee"
+git commit -m "Compras un poco de café"
 
-echo "You do not have a baguette.
+echo "No tienes una baguette.
 
-You drank coffee.
+Has bebido café.
 
-You do not have a donut." > you
+No tienes un donut." > you
 git add .
-git commit -m "You drink the coffee"
+git commit -m "Te bebes el café"
 
 git checkout HEAD~2
-echo "You do not have a baguette.
+echo "No tienes una baguette.
 
-You do not have coffee.
+No tiene café.
 
-You have a donut." > you
+Tienes un donut." > you
 git add .
-git commit -m "You buy a donut"
+git commit -m "Compras un donut"
 
-echo "You do not have a baguette.
+echo "No tienes una baguette.
 
-You do not have coffee.
+No tiene café.
 
-You ate a donut." > you
+Te has comido un donut." > you
 git add .
-git commit -m "You eat the donut"
+git commit -m "Te comes el donut"
 
 git checkout --detach
 git branch -D main
 
 [win]
 
-# Build a situation where you consumed a baguette, a coffee, *and* a donut.
-{ git show HEAD:you | grep "You ate.*baguette"; } && { git show HEAD:you | grep "You drank.*coffee"; } && { git show HEAD:you | grep "You ate.*donut"; }
+# Construye una situación en la que hayas consumido una baguette, un café, *y* un donut.
+{ git show HEAD:you | grep "Has comido.*baguette"; } && { git show HEAD:you | grep "Te bebes.*coffee"; } && { git show HEAD:you | grep "has comido.*donut"; }
 
 # Be on a merge commit.
 test "$(git log --pretty=%P -n 1 HEAD | wc -w)" -ge 2
 
 [congrats]
 
-I wonder if you're more relaxed when you *sleep* in parallel timelines...
+Me pregunto si estás más relajado cuando *duermes* en líneas temporales paralelas...
