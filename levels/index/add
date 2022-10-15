@@ -1,13 +1,13 @@
-title = Updating files in the index
+title = Actualización de archivos en el índice
 cards = add commit checkout
 
 [description]
 
-So you start working, and make changes to your files! Git lets you choose which of these changes you want to put in the next commit. This is like updating the index version of that file to the new version.
+Así que te pones a trabajar y haces cambios en tus archivos. Git te permite elegir cuáles de estos cambios quieres poner en la siguiente confirmación. Esto es como actualizar la versión del índice de ese archivo a la nueva versión.
 
-This allows you to have smaller commits, that describe better what you changed!
+Esto le permite tener commits más pequeños, que describen mejor lo que ha cambiado.
 
-The command for this is the same - `git add`!
+¡El comando para esto es el mismo - `git add`!
 
 [setup]
 
@@ -15,16 +15,16 @@ echo a > a
 echo b > b
 echo c > c
 git add .
-git commit -m "Initial commit"
+git commit -m "Compromiso inicial"
 
 [win]
 
-# Make changes to all files!
+# Realice cambios en todos los archivos!
 test "$(cat a)" != "a" &&
 test "$(cat b)" != "b" &&
 test "$(cat c)" != "c"
 
-# Add only the changes of a and c, and make a commit! Finally, make a commit which captures the changes in b!
+# ¡Añade sólo los cambios de a y c, y haz un commit! Por último, ¡haz un commit que capture los cambios de b!
 
 test "$(git show main:a)" != "a" &&
 test "$(git show main:b)" != "b" &&
@@ -35,4 +35,4 @@ test "$(git show main^:c)" != "c"
 
 [congrats]
 
-Well done! Try tavelling between the commits using `git checkout`, so you can look at their contents again!
+¡Bien hecho! Trata de hacer un tavelling entre los commits usando `git checkout`, ¡así podrás ver su contenido de nuevo!

@@ -1,31 +1,31 @@
-title = Update files in the index
+title = Actualizar archivos en el índice
 cards = add commit
 
 [description]
 
-When we change files, the index won't change on its own. We have to use `git add` to update the index to the changed version of the file.
+Cuando cambiamos archivos, el índice no cambia por sí mismo. Tenemos que usar `git add` para actualizar el índice a la versión cambiada del archivo.
 
-Let's try that!
+¡Intentémoslo!
 
-The icons in the file browser show you when the actual file (white) and the version in the index (blue) are different, and when they are the same!
+Los iconos del explorador de archivos muestran cuándo el archivo real (blanco) y la versión en el índice (azul) son diferentes, y cuándo son iguales.
 
 [win]
 
-Good! The index is sometimes also called the "staging area" - it contains exactly what ends up in the next commit when you use `git commit`!
+¡Bien! El índice a veces se llama también "área de staging" - ¡contiene exactamente lo que termina en la siguiente confirmación cuando se utiliza `git commit`!
 
 [setup]
 
-echo "The candle is burning with a blue flame." > candle
+echo "La vela arde con una llama azul." > vela
 git add .
-git commit -m "The beginning"
+git commit -m "El comienzo"
 
 [win]
 
-# Make a change to the candle.
-test "$(git diff --name-only)" = "candle" || file -f .git/candle-changed && touch .git/candle-changed
+# Haz un cambio en la vela.
+test "$(git diff --name-only)" = "vela" || file -f .git/candle-changed && touch .git/candle-changed
 
-# Add the candle.
-test "$(git diff --cached --name-only)" = "candle" || file -f .git/candle-added && touch .git/candle-added
+# Añade la vela.
+test "$(git diff --cached --name-only)" = "vela" || file -f .git/candle-added && touch .git/candle-added
 
-# Make a commit.
-test "$(git diff --name-only HEAD HEAD^)" = "candle"
+# Haz un commit.
+test "$(git diff --name-only HEAD HEAD^)" = "vela"

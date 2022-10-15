@@ -1,37 +1,37 @@
-title = Resetting files in the index
+title = Restablecer archivos en el índice
 cards = add reset-file commit
 
 [description]
 
-See the dark shadow behind the icons? That's the version of the file in the last commit!
+¿Ves la sombra oscura detrás de los iconos? ¡Esa es la versión del archivo en el último commit!
 
-For example, these candles have been blown out, and that change has been added.
+Por ejemplo, estas velas se han apagado y se ha añadido ese cambio.
 
-But you decide that this was a mistake! You only want to blow out the red candle in the next commit!
+¡Pero usted decide que esto fue un error! ¡Sólo quieres soplar la vela roja en el próximo compromiso!
 
-If you already have updated the index to a changed file, but want to reset it, you can use `git reset`!
+Si ya has actualizado el índice a un archivo modificado, pero quieres restablecerlo, puedes utilizar `git reset`.
 
 [setup]
 
-echo "It's burning!" > red_candle
-echo "It's burning!" > green_candle
-echo "It's burning!" > blue_candle
+echo "¡Está ardiendo!" > red_candle
+echo "¡Está ardiendo!" > green_candle
+echo "¡Está ardiendo!" > blue_candle
 git add .
-git commit -m "The beginning"
+git commit -m "El comienzo"
 
-echo "It's been blown out." > red_candle
-echo "It's been blown out." > green_candle
-echo "It's been blown out." > blue_candle
+echo "Ha sido reventado." > red_candle
+echo "Ha sido reventado." > green_candle
+echo "Ha sido reventado." > blue_candle
 git add .
 
 [win]
 
-# Reset the changes in the green and blue candles!
+# Restablecer los cambios en las velas verdes y azules!
 git show :green_candle | grep burning &&
 git show :blue_candle | grep burning &&
 git show :red_candle | grep -v burning
 
-# And make a commit!
+# Y hacer un commit!
 git show main:green_candle | grep burning &&
 git show main:blue_candle | grep burning &&
 git show main:red_candle | grep -v burning

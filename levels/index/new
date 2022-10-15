@@ -1,28 +1,28 @@
-title = Add new files to the index
+title = Añadir nuevos archivos al índice
 cards = add commit
 
 [description]
 
-So far, when we made a commit, we've always recorded the current status of all objects, right?
+Hasta ahora, cuando hemos hecho un commit, siempre hemos registrado el estado actual de todos los objetos, ¿verdad?
 
-But Git allows you to pick which changes you want to put in a commit!
+Pero Git te permite elegir qué cambios quieres incluir en un commit.
 
-To learn how that works, we need to learn about the "index"! In the index, we can prepare what will be in the next commit. In this game, the index is represented by a blue aura around icons in the file browser!
+Para saber cómo funciona, tenemos que aprender sobre el "índice". En el índice, podemos preparar lo que habrá en el siguiente commit. ¡En este juego, el índice está representado por un aura azul alrededor de los iconos en el navegador de archivos!
 
-Initially, the index is empty. To make a commit that contains a new file, we need to add it!
+Inicialmente, el índice está vacío. Para hacer un commit que contenga un nuevo archivo, ¡debemos añadirlo!
 
 [cli]
 
-You can use tab completion in the terminal! Start typing a filename, then press the tab key to complete its name. This will often save you some time!
+Puedes utilizar el tabulador en el terminal. Comience a escribir un nombre de archivo y luego pulse la tecla de tabulación para completar su nombre. Esto a menudo le ahorrará tiempo.
 
 [setup]
 
-echo "The candle is burning with a blue flame." > candle
+echo "La vela arde con una llama azul." > candle
 
 [win]
 
-# Add the candle.
+# Añade la vela.
 test "$(git diff --cached --name-only)" = "candle" || file -f .git/candle-added && touch .git/candle-added
 
-# Make a commit.
+# Haz un commit.
 test "$(git ls-tree --name-only HEAD)" = "candle"

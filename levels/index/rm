@@ -1,11 +1,11 @@
-title = Delete a file in the next commit
+title = Eliminar un archivo en la siguiente confirmación
 cards = add reset-file checkout-file rm file-delete commit
 
 [description]
 
-If you want to remove a file in the next commit, you can use `git rm`! This will both delete the file locally, and in the index.
+Si quieres eliminar un archivo en la siguiente confirmación, puedes usar `git rm`. Esto eliminará tanto el archivo localmente, como en el índice.
 
-If a file is modified, you'll need to reset these changes first/reset the files.
+Si se modifica un archivo, tendrá que restablecer primero estos cambios/restablecer los archivos.
 
 [setup]
 
@@ -13,12 +13,12 @@ echo a > a
 echo x > b
 echo x > c
 git add .
-git commit -m "Initial commit"
+git commit -m "Commit inicial"
 echo x > a
 echo b > b
 git add b
 
 [win]
 
-# Make a commit where all files are deleted ¯\_(^_^)_/¯
+# Hacer un commit donde se borren todos los archivos ¯\_(^_^)_/¯
 test "$(git ls-tree main | wc -l)" -eq 0
