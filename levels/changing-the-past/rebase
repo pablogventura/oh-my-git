@@ -1,86 +1,86 @@
-title = Rebasing
+title = Rebase
 cards = checkout commit-auto reset-hard rebase
 
 [description]
 
-Okay - turns out that saving time in the morning by utilizing parallel universes is against the regulations of the International Time Travel Association. You'll have to do your tasks in sequence after all.
+Vale - resulta que ahorrar tiempo por la mañana utilizando universos paralelos va en contra de las normas de la Asociación Internacional de Viajes en el Tiempo. Tendrás que hacer tus tareas en secuencia después de todo.
 
-See the "rebase" card? When you drag it to a commit, it will copy the events in your current timeline after the specified one! This way, make a clean, linear timeline where you visit all three shops.
+¿Ves la tarjeta "rebase"? Cuando la arrastres a un compromiso, ¡copiará los eventos de tu línea de tiempo actual después del especificado! De esta manera, haz una línea de tiempo limpia y lineal en la que visites las tres tiendas.
 
-Again, we want to make that our base reality - the "main" branch should point to that timeline!
+De nuevo, queremos que esa sea nuestra realidad base: ¡la rama "principal" debe apuntar a esa línea de tiempo!
 
 [setup]
 
-echo "You do not have a baguette.
+echo "No tienes una baguette.
 
-You do not have coffee.
+No tienes café.
 
-You do not have a donut." > you
+No tienes un donut." > you
 
 git add .
-git commit -m "The Beginning"
+git commit -m "El comienzo"
 
 git checkout -b baguette main
-echo "You have a baguette.
+echo "Tienes una baguette.
 
-You do not have coffee.
+No tienes café.
 
-You do not have a donut." > you
+No tienes un donut." > you
 git add .
-git commit -m "You buy a baguette"
+git commit -m "Compras una baguette"
 
-echo "You ate a baguette.
+echo "Te has comido una baguette.
 
-You do not have coffee.
+No tienes café.
 
-You do not have a donut." > you
+No tienes un donut." > you
 git add .
-git commit -m "You eat the baguette"
+git commit -m "Te comes la baguette"
 
 git checkout -b coffee main
-echo "You do not have a baguette.
+echo "No tienes una baguette.
 
-You have coffee.
+Tienes café.
 
-You do not have a donut." > you
+No tienes un donut." > you
 git add .
-git commit -m "You buy some coffee"
+git commit -m "Compras un poco de café"
 
-echo "You do not have a baguette.
+echo "No tienes una baguette.
 
-You drank coffee.
+Has bebido café.
 
-You do not have a donut." > you
+No tienes un donut." > you
 git add .
-git commit -m "You drink the coffee"
+git commit -m "Te bebes el café"
 
 git checkout -b donut main
-echo "You do not have a baguette.
+echo "No tienes una baguette.
 
-You do not have coffee.
+No tienes café.
 
-You have a donut." > you
+Tienes un donut." > you
 git add .
-git commit -m "You buy a donut"
+git commit -m "Compras un donut"
 
-echo "You do not have a baguette.
+echo "No tienes una baguette.
 
-You do not have coffee.
+No tienes café.
 
-You ate a donut." > you
+Te has comido un donut." > you
 git add .
-git commit -m "You eat the donut"
+git commit -m "Te comes el donut"
 
 git checkout --detach main
 
 
 [win]
 
-# Order all tree branches into one and move the main branch ref
-{ git show main:you | grep "You ate.*baguette"; } && { git show main:you | grep "You drank.*coffee"; } && { git show main:you | grep "You ate.*donut"; } && { test "$(git log main --oneline | wc -l)" -eq 7; }
+# Ordena todas las ramas del árbol en una sola y mueve la rama principal ref
+{ git show main:you | grep "Te has comido.*baguette"; } && { git show main:you | grep "Te bebes.*café"; } && { git show main:you | grep "Te comes el.*donut"; } && { test "$(git log main --oneline | wc -l)" -eq 7; }
 
 [congrats]
 
-Notice how the other timelines and commits are still there - if anything goes wrong, you can also travel back to them.
+Fíjate en que las otras líneas de tiempo y los commits siguen ahí: si algo va mal, también puedes volver a ellos.
 
-It's really hard to actually *destroy* stuff with your time machine.
+Es realmente difícil *destruir* cosas con tu máquina del tiempo.
