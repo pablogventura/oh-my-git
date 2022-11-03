@@ -1,17 +1,17 @@
-title = Creating tags
+title = Creación de etiquetas
 cards = checkout commit-auto merge reset-hard
 
 [description]
 
-Some of your commits may be special commits. Maybe you reached a milestone or a new version number.
+Algunos de tus commits pueden ser especiales. Quizá hayas alcanzado un hito o un nuevo número de versión.
 
-You can mark these commits with a special flag called 'tag'.
+Puedes marcar estos commits con una bandera especial llamada 'tag'.
 
-Write 
+Escribe 
 
     git tag <tag-name> 
     
-to tag your commit.
+para etiquetar su confirmación.
 
 ---
 tipp1
@@ -22,26 +22,26 @@ tipp3
 
 [setup]
 
-echo "event 1" > feature-list
+echo "evento 1" > feature-list
 
 git add .
-git commit -m "Adding feature 1"
+git commit -m "Añadir característica 1"
 
-echo "event 2" >> feature-list
-
-git add .
-git commit -m "Adding feature 2"
-
-echo "event 3" >> feature-list
+echo "evento 2" >> feature-list
 
 git add .
-git commit -m "Adding feature 3"
+git commit -m "Añadir característica 2"
+
+echo "evento 3" >> feature-list
+
+git add .
+git commit -m "Añadir característica 3"
 
 git checkout --detach main
 
 [win]
 
-# Did you create a new tag?
+# ¿Has creado una nueva etiqueta?
 test "$(git tag -l | wc -l)" -ge 1
 
 [actions]
@@ -50,4 +50,4 @@ test "$(git tag -l | wc -l)" -ge 1
 
 [congrats]
 
-Nice! You tagged your first commit :)
+Muy bien. Has etiquetado tu primer commit :)

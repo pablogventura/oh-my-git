@@ -1,13 +1,13 @@
-title = Merging popped stash
+title = Mergeando stashs popeados
 cards = checkout commit-auto merge reset-hard
 
 [description]
 
-When you want to reapply your changes but you already continued working on your file, you might get
-a merge conflict! Let's practise this situation.
-Pop the changes from the stash with
+Si quiere volver a aplicar sus cambios pero ya ha seguido trabajando en su archivo, puede obtener
+¡un conflicto de fusión! Practiquemos esta situación.
+Saque los cambios del stash con
     git stash pop
-and resolve the merge conflict. Commit the resolved changes and clear the stash stack afterwards.
+y resolver el conflicto de fusión. Confirme los cambios resueltos y borre la pila de almacenamiento después.
 
 ---
 tipp1
@@ -18,31 +18,31 @@ tipp3
 
 [setup]
 
-echo "Apple Pie:" > recipe
+echo "Tarta de manzana:" > recipe
 
 git add .
-git commit -m "creating a recipe"
+git commit -m "crear una receta"
 
-echo "- 4 Apples" >> recipe
+echo "- 4 Manzanas" >> recipe
 
 git add .
-git commit -m "Adding ingredients"
+git commit -m "Añadir ingredientes"
 
-echo "- 500g Flour" >> recipe
+echo "- 500 g de harina" >> recipe
 
 git stash push
 
-echo "- Pinch of Salt" >> recipe
+echo "- Una pizca de sal" >> recipe
 
 git checkout main
 git add recipe
 
 [win]
 
-# Did you resolve the confict and commit?
-{ git show HEAD | grep "Flour"; } && { git show HEAD | grep "Salt"; }
+# ¿Resolvió el conflicto y se commiteó?
+{ git show HEAD | grep "Harina"; } && { git show HEAD | grep "Sal"; }
 
-# Did you clear stash stack?
+# ¿Has limpiado la pila de alijo?
 test "$(git stash list | wc -l)" -eq 0
 
 [actions]
@@ -51,4 +51,4 @@ test "$(git stash list | wc -l)" -eq 0
 
 [congrats]
 
-Yay, you got your changes back! :)
+Sí, ¡has recuperado tus cambios! :)

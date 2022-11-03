@@ -1,26 +1,26 @@
-title = Sandbox with three commits
+title = Sandbox con tres commits
 cards = checkout add reset-file checkout-file commit merge rebase
 
 [setup]
 
-echo "You wake up." > you
+echo "Te despiertas." > you
 git add .
-git commit -m "The beginning"
+git commit -m "El comienzo"
 
-echo "You drink coffee." >> you
-git commit -am "First things first"
+echo "Bebes café." >> you
+git commit -am "Lo primero es lo primero"
 
-echo "You hear a knock on the door." >> you
-git commit -am "Who's there?"
+echo "Oyes que llaman a la puerta." >> you
+git commit -am "¿Quién está ahí?"
 
 git branch not_main
 
 [description]
 
-Here's a sandbox you can play around in.
+Aquí tienes una caja de arena en la que puedes jugar.
 
-You can use both the playing cards, as well as the terminal. This is a real Git terminal! Fun things to try:
+Puedes utilizar tanto las cartas como el terminal. ¡Este es un verdadero terminal Git! Cosas divertidas para probar:
 
-- Make a commit that merges three timelines together at once!
-- Create and delete some tags!
-- Make a timeline that's completely independent of the rest!
+- Haz un commit que fusione tres líneas de tiempo a la vez.
+- ¡Cree y elimine algunas etiquetas!
+- Haz una línea de tiempo que sea completamente independiente del resto.

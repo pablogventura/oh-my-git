@@ -1,14 +1,14 @@
-title = Branch from stash
+title = Branch desde el stash
 cards = checkout commit-auto merge reset-hard
 
 [description]
 
-If you want to keep your changes but they don't belong to the main branch, you can easily
-create a new branch from your stashed changes. Just use
+Si quieres mantener tus cambios pero no pertenecen a la rama principal, puedes fácilmente
+crear una nueva rama a partir de tus cambios escondidos. Sólo tienes que utilizar
     git stash branch <branchname> <stash>
-If you just want to use the latest stash entry, you can leave the <stash> option empty.
+Si sólo quiere utilizar la última entrada del alijo, puede dejar la opción <stash> vacía.
 
-Create a new branch from the stashed changes!
+Crea una nueva rama a partir de los cambios almacenados.
 
 ---
 tipp1
@@ -19,24 +19,24 @@ tipp3
 
 [setup]
 
-echo "Apple Pie:" > recipe
+echo "Tarta de manzana:" > recipe
 
 git add .
-git commit -m "creating a recipe"
+git commit -m "crear una receta"
 
-echo "- 4 Apples" >> recipe
+echo "- 4 Manzanas" >> recipe
 
 git add .
-git commit -m "Adding ingredients"
+git commit -m "Añadir ingredientes"
 
-echo "- 500g Flour" >> recipe
+echo "- 500 g de harina" >> recipe
 git stash push
 
 git checkout main
 
 [win]
 
-# Did you create a new branch from the stashed changes?
+# ¿Has creado una nueva rama a partir de los cambios almacenados?
 test "$(git branch --list| wc -l)" -ge 2
 
 [actions]
@@ -45,4 +45,4 @@ test "$(git branch --list| wc -l)" -ge 2
 
 [congrats]
 
-Stashed changes are in a new branch! :)
+Los cambios almacenados están en una nueva rama :)

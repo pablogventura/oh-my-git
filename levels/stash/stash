@@ -3,10 +3,10 @@ cards = checkout commit-auto merge reset-hard
 
 [description]
 
-You will encounter situations in which you are working on your project but you need to
-put your current changes aside temporarily. To do so, you can use the stash function. Use
+Te encontrarás con situaciones en las que estás trabajando en tu proyecto pero necesitas
+dejar de lado los cambios actuales temporalmente. Para ello, puede utilizar la función de alijo. Utilice
     git stash push 
-to add your current changes to the stash stack.
+para añadir los cambios actuales a la pila de almacenamiento.
 
 ---
 tipp1
@@ -17,23 +17,23 @@ tipp3
 
 [setup]
 
-echo "Apple Pie:" > recipe
+echo "Tarta de manzana:" > recipe
 
 git add .
-git commit -m "creating a recipe"
+git commit -m "crear una receta"
 
-echo "- 4 Apples" >> recipe
+echo "- 4 Manzanas" >> recipe
 
 git add .
-git commit -m "Adding ingredients"
+git commit -m "Añadir ingredientes"
 
-echo "- 500g Flour" >> recipe
+echo "- 500 g de harina" >> recipe
 
 git checkout main
 
 [win]
 
-# Did you stash the current changes?
+# ¿Has guardado los cambios actuales?
 test "$(git stash list | wc -l)" -ge 1
 
 [actions]
@@ -42,4 +42,4 @@ test "$(git stash list | wc -l)" -ge 1
 
 [congrats]
 
-Nice stash you got there! :)
+¡Bonito stash el que tienes ahí! :)

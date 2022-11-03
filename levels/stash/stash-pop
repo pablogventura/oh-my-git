@@ -1,11 +1,11 @@
-title = Pop from Stash
+title = Stash Pop
 cards = checkout commit-auto merge reset-hard
 
 [description]
 
-When you stashed your changes and you want to apply them back to your current working directory, you can use
+Cuando hayas guardado tus cambios y quieras aplicarlos de nuevo a tu directorio de trabajo actual, puedes utilizar
     git stash pop
-This will remove the changes from the stash stack. If you also want to keep the changes on the stash stack, use
+Esto eliminará los cambios de la pila de almacenamiento. Si también desea mantener los cambios en la pila de almacenamiento, utilice
     git stash apply
 
 ---
@@ -17,24 +17,24 @@ tipp3
 
 [setup]
 
-echo "Apple Pie:" > recipe
+echo "Tarta de manzana:" > recipe
 
 git add .
-git commit -m "creating a recipe"
+git commit -m "crear una receta"
 
-echo "- 4 Apples" >> recipe
+echo "- 4 Manzanas" >> recipe
 
 git add .
-git commit -m "Adding ingredients"
+git commit -m "Añadir ingredientes"
 
-echo "- 500g Flour" >> recipe
+echo "- 500 g de harina" >> recipe
 
 git stash push
 git checkout main
 
 [win]
 
-# Did you pop the changes from the stash stack?
+# ¿Sacaste los cambios de la pila del alijo?
 test "$(git stash list | wc -l)" -eq 0
 
 [actions]
@@ -43,4 +43,4 @@ test "$(git stash list | wc -l)" -eq 0
 
 [congrats]
 
-Yay, you got your changes back! :)
+Sí, ¡has recuperado tus cambios! :)
