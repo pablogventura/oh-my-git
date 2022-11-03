@@ -1,21 +1,21 @@
-title = Restore a file from the past
+title = Restaurar un archivo del pasado
 cards = checkout checkout-from commit
 
 [description]
 
-Here's a similar problem: you really liked the essay from the very first commit, and want to have it back! Well, checkout can also restore things from older commits, Here's how:
+Aquí hay un problema similar: ¡te gustó mucho el ensayo desde el primer commit, y quieres recuperarlo! Bueno, la comprobación también puede restaurar las cosas de los commits más antiguos, aquí es cómo:
 
     git checkout [commit] [file]
 
 [setup]
 
-echo "good version" > essay
+echo "buena versión" > essay
 git add .
-git commit -m "Initial commit"
-echo "bad version" > essay
-git commit -am "\"Improve\" essay"
+git commit -m "Commit inicial"
+echo "versión mala" > essay
+git commit -am "\"Mejorar\" ensayo"
 
 [win]
 
-# Get the first version of your essay, and make a new commit with it.
-test "$(git show main:essay)" = "good version"
+# Obtenga la primera versión de su ensayo, y haga un nuevo compromiso con ella.
+test "$(git show main:essay)" = "buena versión"

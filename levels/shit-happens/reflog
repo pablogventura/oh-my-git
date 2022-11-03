@@ -1,13 +1,13 @@
-title = Go back to where you were before
+title = Vuelve a donde estabas antes
 cards = checkout reflog
 
 [description]
 
-Say you were looking at something in the past, and then switched back to the main branch.
+Digamos que estabas mirando algo en el pasado, y luego cambiaste a la rama principal.
 
-But then, you got reaaally distracted, and after your lunch break, you can't remember on which commit in the past you were before. How can you find out?
+Pero entonces, te distrajiste mucho, y después de tu descanso para comer, no puedes recordar en qué compromiso del pasado estabas antes. ¿Cómo puedes averiguarlo?
 
-There's a convenient command that shows you all the places your HEAD did point to in the past:
+Hay un cómodo comando que te muestra todos los lugares a los que tu HEAD apuntó en el pasado:
 
     git reflog
 
@@ -22,5 +22,5 @@ git checkout main
 
 [win]
 
-# Find out where you've been before, and go back there!
+# Averigua dónde has estado antes y vuelve allí.
 test "$(git rev-parse HEAD)" = "$(git rev-parse 3)"
