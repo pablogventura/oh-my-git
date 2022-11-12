@@ -30,6 +30,9 @@ echo "~ por que quiero aprender Git ~
 
 test "$(cat form.txt | wc -l )" -ge 5 && echo "(Ha sido robado por su gato.)
 
+
+
+
 " > form.txt
 
 [win]

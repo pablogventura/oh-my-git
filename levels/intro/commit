@@ -13,6 +13,8 @@ De nuevo, en lugar de usar la tarjeta, también puedes escribir los comandos que
 
 Esto es totalmente opcional. Pero será una habilidad súper útil en el mundo real, ¡y te dará una brillante insignia de oro! :)
 
+Ten en cuenta que cada vez que hagas un commit la terminal te consultará por un nombre descriptivo para esa instantanea.
+
 [setup]
 
 echo "El vaso está lleno de agua." > glass
