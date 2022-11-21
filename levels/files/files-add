@@ -14,7 +14,7 @@ No olvides añadir un color y una descripción a tus nuevos muebles.
 
 [setup]
 
-echo A yellow cozy bed. > bed
+echo Una cama azul muy acolchonada. > bed
 
 [win]
 
@@ -24,7 +24,7 @@ test "$NUM_FILES" -ge 3
 
 # Asegúrese de que los colores coinciden con el color de su cama.
 NUM_FILES="$(ls | wc -l)"
-YELLOW_FILES="$(grep -li yellow * | wc -l)"
+YELLOW_FILES="$(grep -li azul * | wc -l)"
 test "$NUM_FILES" -ge 2 && test "$YELLOW_FILES" = "$NUM_FILES"
 
 [congrats]
