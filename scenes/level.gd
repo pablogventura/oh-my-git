@@ -42,7 +42,7 @@ func load(path):
 		if cli_hints != "":
 			description[0] = description[0] + "\n\n[color=#787878]"+cli_hints+"[/color]"
 		
-		congrats = config.get("congrats", "Good job, you solved the level!\n\nFeel free to try a few more things or click 'Next level'.")
+		congrats = config.get("congrats", "Buen trabajo, resolviste el nivel!\n\nSiéntete libre de probar algunas cosas mas o hacer click en 'Siguiente nivel'.")
 		cards = Array(config.get("cards", "").split(" "))
 		if cards == [""]:
 			cards = []
