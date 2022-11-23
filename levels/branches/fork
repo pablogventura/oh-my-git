@@ -5,11 +5,11 @@ cards = checkout commit-auto
 
 ¿Sabías que crear líneas de tiempo paralelas es perfectamente legal y seguro? Es cierto.
 
-¿Puedes averiguar cuándo se estropearon las cosas en este zoo? Entonces, ¡regresa al último buen compromiso y crea un universo paralelo donde todos sean felices!
+¿Puedes averiguar cuándo se estropearon las cosas en este zoo? Entonces, ¡regresa al último buen commit y crea un universo paralelo donde todos sean felices!
 
 [cli]
 
-El animal azul representa un concepto conocido como "puntero HEAD" en Git: Te muestra qué confirmación es la actual.
+El animal azul representa un concepto conocido como "puntero HEAD" en Git: Te muestra qué commit es el actual.
 
 Aquí hay un truco genial para ir al commit anterior:
 
@@ -51,7 +51,7 @@ git branch -d main
 [win]
 
 # Asegúrese de que el niño es feliz.
-git ls-tree --name-only -r HEAD | grep niño
+git ls-tree --name-only -r HEAD | grep child
 
 # Asegúrate de que el león tenga algo que comer.
 git show HEAD:cage/lion | grep -v "muy hambriento"

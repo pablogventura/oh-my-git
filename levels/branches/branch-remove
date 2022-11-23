@@ -19,28 +19,28 @@ git commit -am "Lado derecho"
 echo Saltas por encima de una alcantarilla en el camino, y llegas a la escuela a tiempo. >> you
 git commit -am "Saltar"
 
-git checkout HEAD^ -b friend
+git checkout HEAD^ -b amigo
 echo De repente, te caes, chapoteas en agua apestosa y te come un caimán. >> you
 git commit -am "Un nuevo amigo"
 
-git checkout HEAD~2 -b music
+git checkout HEAD~2 -b musica
 echo Camina por el lado izquierdo de la calle. >> you
-git commit -am "Left side"
+git commit -am "Lado izquierdo"
 
 echo Como llegas un poco tarde, empiezas a correr. Alguien lanza un piano por la ventana y te aplasta. >> you
 git commit -am "Suena bien"
 
-git checkout HEAD^ -b ice-cream
+git checkout HEAD^ -b helado
 echo No tienes prisa y caminas despacio. Incluso te tomas un helado por el camino. Llegas al colegio demasiado tarde, tu profesor se enfada y te expulsan. >> you
 git commit -am "Yummy"
 
-git branch -M main leap
-git checkout leap^^
+git branch -M main salto
+git checkout salto^^
 
 [win]
 
 # Encuentra las ramas malas y elimínalas. Conserva sólo la mejor.
-test "$(git show-ref --heads | cut -f2 -d' ')" = "$(echo refs/heads/leap)"
+test "$(git show-ref --heads | cut -f2 -d' ')" = "$(echo refs/heads/salto)"
 
 [congrats]
 

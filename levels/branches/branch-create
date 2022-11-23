@@ -32,10 +32,10 @@ git branch -D main
 [win]
 
 # Crea una rama llamada "cumpleaños" que apunte a la línea de tiempo de cumpleaños.
-git show cumpleaños | grep 'para el cumpleaños'
+git show cumpleaños | grep 'Ir al cumpleaños'
 
 # Crea una rama llamada "concierto" que apunte a la línea de tiempo de los conciertos.
-git show concierto | grep 'al concierto'
+git show concierto | grep 'Ir al concierto'
 
 [congrats]
 

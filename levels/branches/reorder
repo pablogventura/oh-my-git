@@ -79,7 +79,7 @@ git checkout --detach main
 git show baguette:you | grep "Te comiste.*baguette"
 
 # ¿Te has tomado un café en la rama del café?
-git show coffee:you | grep "Te tomaste.*café"
+git show coffee:you | grep "Has bebido.*café"
 
 # ¿Te has comido un donut en la rama de los donuts?
 git show donut:you | grep "Te comiste.*donut"

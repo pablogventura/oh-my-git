@@ -5,7 +5,7 @@ cards = checkout commit-auto branch branch-delete reset-hard
 
 Tenga en cuenta que hay dos opciones para "viajar al final de una línea de tiempo":
 
-En primer lugar, puedes viajar directamente al compromiso, como hemos hecho antes.
+En primer lugar, puedes viajar directamente al ultimo commit de la rama y desacoplar la rama a los nuevos commits que hagas.
 
 Y en segundo lugar, puedes viajar a la etiqueta de la rama. En este caso, cuando hagas un nuevo commit, la rama crecerá contigo, ¡y seguirá apuntando al final de la línea de tiempo!
 
@@ -13,7 +13,7 @@ Y en segundo lugar, puedes viajar a la etiqueta de la rama. En este caso, cuando
 
 Para ir a una rama, escriba `git checkout nombre_de_la_rama`.
 
-Y para ir a la última confirmación, escriba `git checkout --detach nombre_de_la_rama`.
+Y para ir al último commit y desacoplar la rama para nuevos commits, escriba `git checkout --detach nombre_de_la_rama`.
 
 [setup]
 
@@ -23,13 +23,13 @@ git commit -m "Preparativos para la noche"
 echo "¡Vete a la fiesta de cumpleaños!" >> you
 git add .
 git commit -m "Ir al cumpleaños"
-git branch birthday
+git branch cumpleaños
 
 git checkout HEAD~1
 echo "¡Vete al concierto!" > you
 git add .
 git commit -m "Ir al concierto"
-git branch concert
+git branch concierto
 
 git checkout HEAD~1
 
@@ -37,13 +37,13 @@ git branch -D main
 
 [win]
 
-# Viaja directamente al último commit amarillo de la línea de tiempo del cumpleaños, haz un cambio a 'tú', y haz un commit
+# Viaja directamente al último commit amarillo de la línea de tiempo del cumpleaños desacoplando la rama cumpleaños, haz un cambio a 'you', y haz un commit
 for commit in $(git cat-file --batch-check='%(objectname) %(objecttype)' --batch-all-objects | grep 'commit$' | cut -f1 -d' '); do
-    if test $(git rev-parse $commit^) = $(git rev-parse birthday); then
+    if test $(git rev-parse $commit^) = $(git rev-parse "cumpleaños"); then
         return 0
     fi
 done
 return 1
 
-# Viaja a la rama azul 'concert', haz un cambio a 'you', y un commit.
-git show concert^ | grep "Ir al concierto"
+# Viaja a la rama azul 'concierto', haz un cambio a 'you', y un commit.
+git show concierto^ | grep "Ir al concierto"
