@@ -72,7 +72,7 @@ git branch -D main
 [win]
 
 # Construye una situación en la que hayas consumido una baguette, un café, *y* un donut.
-{ git show HEAD:you | grep "Has comido.*baguette"; } && { git show HEAD:you | grep "Te bebes.*coffee"; } && { git show HEAD:you | grep "has comido.*donut"; }
+{ git show HEAD:you | grep "Te comiste una baguette"; } && { git show HEAD:you | grep "Has bebido café"; } && { git show HEAD:you | grep "Te has comido un donut"; }
 
 # Be on a merge commit.
 test "$(git log --pretty=%P -n 1 HEAD | wc -w)" -ge 2
