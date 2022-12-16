@@ -3,20 +3,20 @@ cards = add reset-file commit
 
 [description]
 
-El índice es realmente útil, porque nos permite ser precisos sobre los cambios que queremos incluir en cada confirmación.
+El índice es realmente útil, porque nos permite ser precisos sobre los cambios que queremos incluir en cada commit.
 
 [setup]
 
 echo "Un martillo, en equilibrio sobre su mango." > martillo
 echo "Una botella, que contiene un líquido claro." > botella
-echo "Un terrón de azúcar blanco." > cubo_de_azúcar
+echo "Un terrón de azúcar blanco." > cubo_de_azucar
 
 git add .
 git commit -m "El comienzo"
 
 [win]
 
-# Realiza cambios en los tres objetos, para formar una secuencia lógica de eventos.
+# PRIMERO Realiza cambios en los TRES objetos, para formar una secuencia lógica de eventos.
 test "$(git diff --name-only | wc -l)" -eq 3 || file -f .git/candle-changed && touch .git/candle-changed
 
 # Sólo añade uno de estos cambios.

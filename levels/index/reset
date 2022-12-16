@@ -19,19 +19,19 @@ echo "¡Está ardiendo!" > blue_candle
 git add .
 git commit -m "El comienzo"
 
-echo "Ha sido reventado." > red_candle
-echo "Ha sido reventado." > green_candle
-echo "Ha sido reventado." > blue_candle
+echo "Ha sido apagada." > red_candle
+echo "Ha sido apagada." > green_candle
+echo "Ha sido apagada." > blue_candle
 git add .
 
 [win]
 
 # Restablecer los cambios en las velas verdes y azules!
-git show :green_candle | grep burning &&
-git show :blue_candle | grep burning &&
-git show :red_candle | grep -v burning
+git show :green_candle | grep ardiendo &&
+git show :blue_candle | grep ardiendo &&
+git show :red_candle | grep -v ardiendo
 
 # Y hacer un commit!
-git show main:green_candle | grep burning &&
-git show main:blue_candle | grep burning &&
-git show main:red_candle | grep -v burning
+git show main:green_candle | grep ardiendo &&
+git show main:blue_candle | grep ardiendo &&
+git show main:red_candle | grep -v ardiendo

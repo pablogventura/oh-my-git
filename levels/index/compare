@@ -47,5 +47,5 @@ git checkout HEAD~3
 
 [win]
 
-# Escoge la línea de tiempo más clara y haz que suene la alarma.
-git show step-by-step:smoke_detector | tail -n 1 | grep -v "absolutamente silencioso"
+# Escoge la línea de tiempo más clara y haz que suene la alarma del detector de humo.
+git show step-by-step:detector_de_humo | tail -n 1 | grep -v "absolutamente silencioso"
