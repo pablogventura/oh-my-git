@@ -7,9 +7,9 @@ A veces, las líneas de tiempo se contradicen.
 
 Por ejemplo, en este caso, uno de nuestros clientes quiere que estas líneas de tiempo se fusionen, pero desayunaron cosas diferentes en ambas líneas de tiempo.
 
-Intenta unirlos. Te darás cuenta de que habrá un conflicto. La máquina del tiempo te dejará decidir cómo proceder: puedes editar el elemento problemático, te mostrará las secciones en conflicto. Puedes mantener cualquiera de las dos versiones - ¡o crear una combinación de ellas! Elimine los marcadores >>>, <<<, y ===, y haga una nueva confirmación para finalizar la fusión.
+Intenta unirlos. Te darás cuenta de que habrá un conflicto. La máquina del tiempo te dejará decidir cómo proceder: puedes editar el elemento problemático, te mostrará las secciones en conflicto. Puedes mantener cualquiera de las dos versiones - ¡o crear una combinación de ellas! Elimine los marcadores >>>, <<<, y ===, y haga un nuevo commit para finalizar la fusión.
 
-Deje que su línea de tiempo finalizada sea la "principal".
+Deje que su branch finalizada sea la "main".
 
 [setup]
 
